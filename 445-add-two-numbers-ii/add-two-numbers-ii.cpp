@@ -27,7 +27,7 @@ public:
 
        ListNode* head = nullptr;
        int carry = 0;
-       //while loop
+       //while loop for findin v1 v2 and sum and carry
        while(!s1.empty() || !s2.empty() || carry != 0  ){
         int val1 = 0;
         if(!s1.empty()){
