@@ -6,11 +6,11 @@ public:
             freq[c - 'a']++;
         }
         for(char c : t){
-            freq[c - 'a']--;
+            freq[c - 'a']++;
         }
 
         for(int i = 0; i<26; i++){
-            if(freq[i] < 0){
+            if(freq[i]%2 != 0){
                 return 'a' + i;
             }
             
