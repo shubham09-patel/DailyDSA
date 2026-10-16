@@ -1,25 +1,26 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if(s.length()!=t.length()){
+        //edge cases... if string s and t both have different length the retrun false firstly;
+        if(s.length() != t.length()){
             return false;
         }
+        //ek 26 size ki array jo har lettere ki frequescy ko store/count kregi 
+        vector<int>count(26,0);
 
-        int freq[28] ={0};
-
-        for(char c : s){
-            freq[c - 'a']++;
-        }
-        for(char c : t){
-            freq[c - 'a']--;
+        // traver both string
+        for(int i = 0 ; i < s.length(); i++){
+            count[s[i] - 'a']++;
+            count[t[i] - 'a']--;
         }
 
         for(int i = 0; i<26; i++){
-            if(freq[i]!=0){
+            if(count[i]!=0){
                 return false;
             }
         }
         return true;
+
 
     }
 };
